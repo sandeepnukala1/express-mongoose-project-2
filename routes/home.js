@@ -4,16 +4,21 @@
 const router = require("express").Router()
 const bcrypt = require("bcrypt")
 const User = require('../models/User')
+const AuthorizationCtrl = require('../controllers/authorization')
+const ProjectsRouter = require("./projects")
+const ResourceRouter = require("./resources")
 
 ///////////////////////////////
 // Router Specific Middleware
 ////////////////////////////////
-
+router.use(AuthorizationCtrl.addUserToRequest)
+router.use("/projects", ProjectsRouter)
+router.use("/resources", ResourceRouter)
 ///////////////////////////////
 // Router Routes
 ////////////////////////////////
 router.get("/", (req, res) => {
-    res.render("home")
+    res.render("landingScreen")
 })
 
 router.get("/auth/signup", (req, res) => {
@@ -50,7 +55,7 @@ router.post("/auth/login", async (req, res) => {
           // create user session property
           req.session.userId = user._id
           //redirect to main page
-          res.send("logged in")
+          res.redirect("/home")
         } else {
           // send error is password doesn't match
           res.json({ error: "passwords don't match" })
@@ -71,6 +76,11 @@ router.get("/auth/logout", (req, res) => {
     res.redirect("/")
   })
 
+router.get("/home", AuthorizationCtrl.isAuthorized, async (req, res) => {
+    const user = await User.findOne({ username: req.user.username })
+    console.log(user)
+    res.render("index")
+})
 
 ///////////////////////////////
 // Export Router
