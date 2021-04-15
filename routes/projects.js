@@ -15,11 +15,10 @@ router.use(AuthorizationCtrl.addUserToRequest)
 // Router Routes
 ////////////////////////////////
 router.get("/", AuthorizationCtrl.isAuthorized, async (req, res) => {
-    const usersProjects = await User.find({ projects: {$in: []} })
-    console.log(usersProjects)
-    const projects = await Project.find({}).populate("projects")
-    console.log('Here i am', projects)
-    res.render("projects/projects", { projects })
+    const user = await User.findOne({username: req.user.username})
+    const projectIds = user.projects
+    const usersProjects = await Project.find({ _id: {$in: projectIds} })
+    res.render("projects/projects", { projects: usersProjects })
 })
 
 router.get("/new", AuthorizationCtrl.isAuthorized, async (req, res) => {
