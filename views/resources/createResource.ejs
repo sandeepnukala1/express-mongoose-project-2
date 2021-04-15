@@ -11,7 +11,14 @@
         <a href="/auth/logout"><button class="button is-danger">Logout</button></a>
       </div>
       Create Resource here!
-      
+      <form action="/resources/new" method="post">
+        Resource Name: <input type="text" name="resourceName">
+        Resource Manager: <input type="text" name="resourceManager">
+        Capacity: <input type="number" name="capacity">
+        Resource Type: <input type="text" name="resourceType">
+        Cost: <input type="number" name="cost">
+        <input class="button" type="submit" value="Create Resource" />
+    </form>
     </main>
     <!-- THE HEAD TAG PARTIAL -->
     <%- include("../partials/footer") %>

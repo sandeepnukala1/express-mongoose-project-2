@@ -11,6 +11,11 @@
         <a href="/auth/logout"><button class="button is-danger">Logout</button></a>
       </div>
      
+      <% for(r of resources) { %>
+        <div>
+          <div><%= r.resourceName %></div>
+        </div>
+      <% } %>
       
     </main>
     <!-- THE HEAD TAG PARTIAL -->
