@@ -15,6 +15,9 @@
       <a href="/resources">View Resources</a>
       <a href="/projects/new">Create Project</a>
       <a href="/resources/new">Create Resource</a>
+      <% if(user.role === 'Admin') { %>
+        <a href="/userManagement">User Management</a>
+      <% } %>
       
     </main>
     <!-- THE HEAD TAG PARTIAL -->

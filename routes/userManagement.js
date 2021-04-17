@@ -1,29 +1,21 @@
-///////////////////////////////
-// Import Router
-////////////////////////////////
 const router = require("express").Router()
 const User = require("../models/User")
 const bcrypt = require("bcrypt")
 const AuthorizationCtrl = require("../controllers/authorization")
 
-///////////////////////////////
-// Router Specific Middleware
-////////////////////////////////
 router.use(AuthorizationCtrl.addUserToRequest)
 
-///////////////////////////////
-// Router Routes
-////////////////////////////////
 router.get("/", AuthorizationCtrl.isAuthorized, async (req, res) => {
-    const resources = await User.find({})
-    res.render("resources/resources", { resources })
+    const adminUsers = await User.find({ role: 'Admin' })
+    res.render("userManagement/viewAdmins", { adminUsers })
 })
 
 router.get("/new", AuthorizationCtrl.isAuthorized, async (req, res) => {
-    res.render("resources/createResource")
+    res.render("userManagement/createAdmin")
 })
 
 router.post("/new", AuthorizationCtrl.isAuthorized, async (req, res) => {
+    req.body.role = 'Admin';
     const salt = await bcrypt.genSalt(10)
     // hash the password
     req.body.password = await bcrypt.hash(req.body.password, salt)
@@ -32,9 +24,9 @@ router.post("/new", AuthorizationCtrl.isAuthorized, async (req, res) => {
         if(error) {
             console.log(error)
         } else {
-            res.redirect("/resources")
+            res.redirect("/userManagement")
         }
     })
 })
 
-module.exports = router
+module.exports = router;

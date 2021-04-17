@@ -17,7 +17,13 @@ router.use(AuthorizationCtrl.addUserToRequest)
 router.get("/", AuthorizationCtrl.isAuthorized, async (req, res) => {
     const user = await User.findOne({username: req.user.username})
     const projectIds = user.projects
-    const usersProjects = await Project.find({ _id: {$in: projectIds} })
+    let usersProjects = []
+    if(user.role !== 'Admin') {
+        usersProjects = await Project.find({ _id: {$in: projectIds} })
+    } else {
+        usersProjects = await Project.find({})
+    }
+    
     res.render("projects/projects", { projects: usersProjects })
 })
 
@@ -28,8 +34,10 @@ router.get("/new", AuthorizationCtrl.isAuthorized, async (req, res) => {
 router.post("/new", AuthorizationCtrl.isAuthorized, async (req, res) => {
     const user = await User.findOne({ username: req.user.username })
     const project = await Project.create(req.body)
-    user.projects.push(project)
-    user.save()
+    if(user.role !== 'Admin') {
+        user.projects.push(project)
+        user.save()
+    }
     res.redirect("/projects")
 })
 

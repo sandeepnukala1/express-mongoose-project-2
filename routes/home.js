@@ -7,6 +7,7 @@ const User = require('../models/User')
 const AuthorizationCtrl = require('../controllers/authorization')
 const ProjectsRouter = require("./projects")
 const ResourceRouter = require("./resources")
+const UserManagementRouter = require("./userManagement")
 
 ///////////////////////////////
 // Router Specific Middleware
@@ -14,6 +15,7 @@ const ResourceRouter = require("./resources")
 router.use(AuthorizationCtrl.addUserToRequest)
 router.use("/projects", ProjectsRouter)
 router.use("/resources", ResourceRouter)
+router.use("/userManagement", UserManagementRouter)
 ///////////////////////////////
 // Router Routes
 ////////////////////////////////
@@ -79,7 +81,7 @@ router.get("/auth/logout", (req, res) => {
 router.get("/home", AuthorizationCtrl.isAuthorized, async (req, res) => {
     const user = await User.findOne({ username: req.user.username })
     console.log(user)
-    res.render("index")
+    res.render("index", { user })
 })
 
 ///////////////////////////////
