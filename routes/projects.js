@@ -41,4 +41,22 @@ router.post("/new", AuthorizationCtrl.isAuthorized, async (req, res) => {
     res.redirect("/projects")
 })
 
+router.delete("/:id", AuthorizationCtrl.isAuthorized, async (req,res) => {
+    const id = req.params.id
+    await Project.findByIdAndDelete(id)
+    res.redirect("/projects")
+})
+
+router.put("/:id", AuthorizationCtrl.isAuthorized, async (req,res) => {
+    const id = req.params.id
+    await Project.findByIdAndUpdate(id, req.body, {new: true})
+    res.redirect("/projects")
+})
+
+router.get("/:id", AuthorizationCtrl.isAuthorized, async (req,res) => {
+    const id = req.params.id
+    const project = await Project.findById(id)
+    res.render("projects/showProject", { project })
+})
+
 module.exports = router

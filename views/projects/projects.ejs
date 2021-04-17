@@ -13,7 +13,11 @@
      
       <% for(project of projects) { %>
         <div>
-          <div><%= project.projectName %></div>
+          <div><%= project.projectName %> <a href="/projects/<%= project._id %>"><button class="button">Edit</button></a> 
+            <form action="/projects/<%= project._id %>?_method=DELETE" method="post">
+              <input style="margin: 2px;background-color: #fd7d24;" class="button" type="submit" value="Delete"/></a>
+            </form>
+            </div>
         </div>
       <% } %>
     </main>
