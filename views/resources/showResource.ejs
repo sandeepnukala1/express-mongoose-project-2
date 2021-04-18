@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- THE HEAD TAG PARTIAL -->
+  <%- include("../partials/head") %>
+  <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("../partials/header") %>
+    <main class="container">
+      <!-- *********DISPLAY Images********* -->
+      <div class="float-right">
+        <a href="/auth/logout"><button class="button is-danger">Logout</button></a>
+      </div>
+      <form action="/resources/<%= resource._id %>?_method=PUT" method="post">
+        <input class="input" type="text" placeholder="username" name="username" value="<%= resource.username %>"/>
+        <input class="input" type="password" placeholder="password" name="password" />
+        <input class="input" type="text" placeholder="role" name="role" value="<%= resource.role %>"/>
+        <input class="input" type="text" placeholder="resource manager" name="resourceManager" value="<%= resource.resourceManager %>"/>
+        <input class="input" type="number" placeholder="capacity" name="capacity" value="<%= resource.capacity %>"/>
+        <input class="input" type="text" placeholder="resource type" name="resourceType" value="<%= resource.resourceType %>"/>
+        <input class="input" type="number" placeholder="cost" name="cost" value="<%= resource.cost %>"/>
+        <input class="button" type="submit" value="Update Resource" />
+    </form>
+    </main>
+    <!-- THE HEAD TAG PARTIAL -->
+    <%- include("../partials/footer") %>
+  </body>
+</html>

@@ -13,7 +13,13 @@
      
       <% for(r of resources) { %>
         <div>
-          <div><%= r.username %></div>
+          <div><%= r.username %><a href="/resources/<%= r._id %>"><button class="button">Edit</button></a> 
+            <% if(r.loggedInRole === 'Admin') { %>
+              <form action="/resources/<%= r._id %>?_method=DELETE" method="post">
+                <input style="margin: 2px;background-color: #fd7d24;" class="button" type="submit" value="Delete"/></a>
+              </form>
+            <% } %>
+            </div>
         </div>
       <% } %>
       

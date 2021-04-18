@@ -14,7 +14,9 @@
       <a href="/projects">View Projects</a>
       <a href="/resources">View Resources</a>
       <a href="/projects/new">Create Project</a>
+      <% if(user.role === 'Admin') { %>
       <a href="/resources/new">Create Resource</a>
+      <% } %>
       <% if(user.role === 'Admin') { %>
         <a href="/userManagement">User Management</a>
       <% } %>
