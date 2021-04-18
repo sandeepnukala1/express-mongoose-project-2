@@ -7,9 +7,6 @@
     <%- include("../partials/header") %>
     <main class="container">
       <!-- *********DISPLAY Images********* -->
-      <div class="float-right">
-        <a href="/auth/logout"><button class="button is-danger">Logout</button></a>
-      </div>
       <form action="/projects/<%= project._id %>?_method=PUT" method="post">
           Project Name: <input type="text" name="projectName" value="<%= project.projectName %>">
           Start Date: <input type="date" name="startDate" value="<%= project.startDate %>">
