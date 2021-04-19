@@ -7,7 +7,7 @@
     <%- include("../partials/header") %>
     <main class="container">
       <!-- *********DISPLAY Images********* -->
-      
+      <div class="landing-section-2">
       Create Project here!
       <form action="/projects/new" method="post">
           Project Name: <input type="text" name="projectName">
@@ -17,6 +17,7 @@
           Project Manager: <input type="text" name="projectManager">
           <input class="button" type="submit" value="Create Project" />
       </form>
+    </div>
     </main>
     <!-- THE HEAD TAG PARTIAL -->
     <%- include("../partials/footer") %>

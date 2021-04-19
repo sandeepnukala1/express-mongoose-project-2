@@ -7,14 +7,14 @@
     <%- include("../partials/header") %>
     <main class="container">
       <!-- *********DISPLAY Images********* -->
-      
+      <div class="landing-section-2">
       <a class="button" href="userManagement/new"><button>Create Admin!</button></a>
       <% for(r of adminUsers) { %>
         <div>
           <div><%= r.username %></div>
         </div>
       <% } %>
-      
+      </div>
     </main>
     <!-- THE HEAD TAG PARTIAL -->
     <%- include("../partials/footer") %>

@@ -7,7 +7,7 @@
     <%- include("../partials/header") %>
     <main class="container">
       <!-- *********DISPLAY Images********* -->
-      
+      <div class="landing-section-2">
       <form action="/resources/<%= resource._id %>?_method=PUT" method="post">
         <input class="input" type="text" placeholder="username" name="username" value="<%= resource.username %>"/>
         <input class="input" type="password" placeholder="password" name="password" />
@@ -18,6 +18,7 @@
         <input class="input" type="number" placeholder="cost" name="cost" value="<%= resource.cost %>"/>
         <input class="button" type="submit" value="Update Resource" />
     </form>
+    </div>
     </main>
     <!-- THE HEAD TAG PARTIAL -->
     <%- include("../partials/footer") %>

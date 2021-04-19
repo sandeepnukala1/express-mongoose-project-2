@@ -6,13 +6,19 @@
         <!-- THE HEADER TAG PARTIAL -->
         <%- include("../partials/navbar") %>
         <main class="container">
-          <div class="center-align">
+          <div class="section-2">
             <div>
               <h1>User Login</h1>
                 <form class="box" action="/auth/login" method="post">
-                <input class="input" type="text" placeholder="username" name="username" />
-                <input class="input" type="password" placeholder="password" name="password" />
-                <input class="button is-success is-outlined" type="submit" value="login" />
+                  <div class="field">
+                    <label class="label">Username</label>
+                    <input class="input" type="text" placeholder="username" name="username" />
+                  </div>
+                  <div class="field">
+                    <label class="label">Password</label>
+                    <input class="input" type="password" placeholder="password" name="password" />
+                  </div>
+                  <input class="button is-success" type="submit" value="Login" />
               </form>
             </div>
           </div>
