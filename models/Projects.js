@@ -6,7 +6,7 @@ const ProjectSchema = new Schema({
     endDate: {type: Date},
     notes: {type: String},
     projectManager: {type: String, required: true},
-    resources: [{type: Schema.Types.ObjectId, ref: "Resource"}]
+    resources: [{type: Schema.Types.ObjectId, ref: "User"}]
 }, {timestamps: true})
 
 const Project = model("Project", ProjectSchema)

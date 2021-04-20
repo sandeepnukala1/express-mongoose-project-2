@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- THE HEAD TAG PARTIAL -->
+  <%- include("../partials/head") %>
+  <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("../partials/header") %>
+    <main class="container">
+      <!-- *********DISPLAY Images********* -->
+
+      <div class="landing-section-2">
+        <form action="/projects/<%= allocationObj.projectId %>/resourceAllocations" method="POST">
+        <div class="field has-addons">
+            <div class="control is-expanded">
+              <div class="select is-fullwidth">
+                <select name="resource">
+                <% for(r of allocationObj.resources) { %>
+                    <option value="<%= r._id %>"><%= r.username %></option>
+                <% } %>
+                </select>
+              </div>
+            </div>
+            <div class="control">
+              <button type="submit" class="button is-primary">Choose</button>
+            </div>
+          </div>
+        </form>
+        <span class="icon-text">
+          <span class="icon is-large">
+            <a href="/projects/<%= allocationObj.projectId %>"><i class="fa fa-2x fa-arrow-circle-left" aria-hidden="true"></i></a>
+          </span>
+          <span>Resource Allocation</span>
+        </span>
+      <div class="tabs is-right is-boxed" id="tabs">
+        <ul>
+          <li class="is-active" data-tab="1">
+            <a>
+              <span class="icon is-small"><i class="fa fa-user-circle-o"></i></span>
+              <span>Resources</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="tab-content">
+        <p class="is-active" data-content="1">
+            <div class="table-container is-active" data-content="1">
+                <table class="table is-striped is-fullwidth">
+                    <thead>
+                    <tr>
+                      <th title="Resource Name">Username</th>
+                      <th title="Role">Role</th>
+                      <th title="Resource Manager">Resource Manager</th>
+                      <th title="Capacity">Capacity</th>
+                      <th title="Resource Type">Resource Type</th>
+                      <th title="Cost">Cost</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <% for(r of allocationObj.projResources) { %>
+                    <tr>
+                      <td><%= r.username %></td>
+                      <td><%= r.role %></td>
+                      <td><%= r.resourceManager %></td>
+                      <td><%= r.capacity %></td>
+                      <td><%= r.resourceType %></td>
+                      <td><%= r.cost %></td>
+                    </tr>
+                    <% } %>
+                    </tbody>
+                  </table>
+            </div>
+        </p>
+       
+      </div>
+    </div>
+    </main>
+    <!-- THE HEAD TAG PARTIAL -->
+    <%- include("../partials/footer") %>
+  </body>
+</html>
