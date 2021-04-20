@@ -3,13 +3,29 @@
 - **Author:** Sandeep Nukala
 - **Link to Live Site:** https://proexpressapp.herokuapp.com/
 
+## Getting Started
+Use the above live link to visit the website. You will need to log in as an Admin user to create a user, with your own credentials.
+- Username: admin
+- Password: admin
 
 ## Project Summary
 
+"PRO" stands for project and resource optimization. "PRO"formance
+is an integrated tool for project and resource management. Our goal
+is to provide project managers an efficient and dynamic solution for
+planning project timelines and resource capacity.
 
+## Technologies Used
+- Node JS
+- MongoDB
+- Express JS
+- Bulma CSS
+- HTML
+- CSS
 
-## Technology Used
+## ERD
 
+![Alt text] (https://i.imgur.com/AMF6FxL.png)
 
 ## Models
 
