@@ -16,16 +16,31 @@
         </span>
 
       <form class="form box" action="/projects/<%= project._id %>?_method=PUT" method="post">
-          <label class="label">Project Name:</label>   
-          <input class="input" type="text" name="projectName" value="<%= project.projectName %>">
-          <label class="label">Start Date:</label>   
-          <input class="input" type="date" name="startDate" value="<%= project.startDate %>">
-          <label class="label">End Date:</label> 
-          <input class="input" type="date" name="endDate" value="<%= project.endDate %>">
-          <label class="label">Notes:</label> 
-          <input class="input" type="text" name="notes" value="<%= project.notes %>">
-          <label class="label">Project Manager:</label> 
-          <input class="input" type="text" name="projectManager" value="<%= project.projectManager %>">
+          <div class="field">
+            <label class="label">Project Name:</label>   
+            <input class="input" type="text" name="projectName" value="<%= project.projectName %>">
+          </div>
+          
+          <div class="field">
+            <label class="label">Start Date:</label>   
+            <input class="input" type="date" name="startDate" value="<%= project.startDate %>">
+          </div>
+          
+          <div class="field">
+            <label class="label">End Date:</label> 
+            <input class="input" type="date" name="endDate" value="<%= project.endDate %>">
+          </div>
+          
+          <div class="field">
+            <label class="label">Notes:</label> 
+            <input class="input" type="text" name="notes" value="<%= project.notes %>">
+          </div>
+          
+          <div class="field">
+            <label class="label">Project Manager:</label> 
+            <input class="input" type="text" name="projectManager" value="<%= project.projectManager %>">
+          </div>
+          
           <input class="button" type="submit" value="Update Project"/></a>
       </form>
       </div>

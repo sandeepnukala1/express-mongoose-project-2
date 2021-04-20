@@ -15,20 +15,92 @@
                         <span>Create admin form</span>
                       </span>
                     <form class="form box" action="/userManagement/new" method="post">
-                    <label class="label">User Name:</label>
-                    <input class="input" type="text" placeholder="username" name="username" />
-                    <label class="label">Password:</label>
-                    <input class="input" type="password" placeholder="password" name="password" />
-                    <label class="label">Role:</label>
-                    <input class="input" type="text" placeholder="role" name="role" value="Admin" disabled/>
-                    <label class="label">Resource Manager:</label>
-                    <input class="input" type="text" placeholder="resource manager" name="resourceManager" />
-                    <label class="label">Capacity:</label>
-                    <input class="input" type="number" placeholder="capacity" name="capacity" />
-                    <label class="label">Resource Type:</label>
-                    <input class="input" type="text" placeholder="resource type" name="resourceType" />
-                    <label class="label">Cost:</label>
-                    <input class="input" type="number" placeholder="cost" name="cost" />
+                        <div class="field">
+                            <label class="label">User Name:</label>
+                            <div class="control has-icons-left">
+                              <input class="input" type="text" placeholder="username" name="username" />
+                              <span class="icon is-small is-left">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                              </span>
+                            </div>
+                          </div>
+                         
+                          <div class="field">
+                            <label class="label">Password:</label>
+                            <div class="control has-icons-left">
+                              <input class="input" type="password" placeholder="password" name="password" />
+                              <span class="icon is-small is-left">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                              </span>
+                            </div>
+                          </div>
+                          
+                          <div class="field">
+                            <label class="label">Role:</label>
+                            <div class="field">
+                              <p class="control has-icons-left">
+                                <span class="select is-fullwidth">
+                                  <select name="role" disabled>
+                                    <option name="" value="">Select Role</option>
+                                    <option name="role" value="Admin" selected>Admin</option>
+                                    <option name="role" value="Manager">Manager</option>
+                                    <option name="role" value="Resource">Resource</option>
+                                  </select>
+                                </span>
+                                <span class="icon is-small is-left">
+                                  <i class="fa fa-universal-access" aria-hidden="true"></i>
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                          
+                          <div class="field">
+                            <label class="label">Resource Manager:</label>
+                            <div class="control has-icons-left">
+                              <input class="input" type="text" placeholder="resource manager" name="resourceManager" />
+                              <span class="icon is-small is-left">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                              </span>
+                            </div>
+                          </div>
+                          
+                          <div class="field">
+                            <label class="label">Capacity:</label>
+                            <div class="control has-icons-left">
+                              <input class="input" type="number" placeholder="capacity" name="capacity" />
+                              <span class="icon is-small is-left">
+                                <i class="fa fa-percent" aria-hidden="true"></i>
+                              </span>
+                            </div>
+                          </div>
+                          
+                          <div class="field">
+                            <label class="label">Resource Type:</label>
+                            <div class="field">
+                              <p class="control has-icons-left">
+                                <span class="select is-fullwidth">
+                                  <select name="resourceType">
+                                    <option name="" value="">Select Resource Type</option>
+                                    <option name="resourceType" value="Contractor">Contractor</option>
+                                    <option name="resourceType" value="Full-Time">Full-Time</option>
+                                  </select>
+                                </span>
+                                <span class="icon is-small is-left">
+                                  <i class="fa fa-universal-access" aria-hidden="true"></i>
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                          
+                          <div class="field">
+                            <label class="label">Cost:</label>
+                            <div class="control has-icons-left">
+                              <input class="input" type="number" placeholder="cost" name="cost" />
+                              <span class="icon is-small is-left">
+                                <i class="fa fa-usd" aria-hidden="true"></i>
+                              </span>
+                            </div>
+                          </div>
                     <input class="button is-link is-outlined" type="submit" value="Sign Up" />
                     </form>
                 </div>

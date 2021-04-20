@@ -15,21 +15,67 @@
             <span>Edit admin resource form</span>
           </span>
       <form action="/userManagement/<%= resource._id %>?_method=PUT" method="post">
-        <label class="label">User Name:</label>
-        <input class="input" type="text" placeholder="username" name="username" value="<%= resource.username %>"/>
-        <label class="label">Password:</label>
-        <input class="input" type="password" placeholder="password" name="password" />
-        <label class="label">Role:</label>
-        <input class="input" type="text" placeholder="role" name="role" value="<%= resource.role %>"/>
-        <label class="label">Resource Manager:</label>
-        <input class="input" type="text" placeholder="resource manager" name="resourceManager" value="<%= resource.resourceManager %>"/>
-        <label class="label">Capacity:</label>
-        <input class="input" type="number" placeholder="capacity" name="capacity" value="<%= resource.capacity %>"/>
-        <label class="label">Resource Type:</label>
-        <input class="input" type="text" placeholder="resource type" name="resourceType" value="<%= resource.resourceType %>"/>
-        <label class="label">Cost:</label>
-        <input class="input" type="number" placeholder="cost" name="cost" value="<%= resource.cost %>"/>
-        <input class="button" type="submit" value="Update Resource" />
+        <div class="field">
+            <label class="label">User Name:</label>
+            <input class="input" type="text" placeholder="username" name="username" value="<%= resource.username %>"/>
+  
+          </div>
+          <div class="field">
+            <label class="label">Password:</label>
+            <input class="input" type="password" placeholder="password" name="password" />
+            
+          </div>
+          <div class="field">
+            <label class="label">Role:</label>
+            <div class="field">
+              <p class="control has-icons-left">
+                <span class="select is-fullwidth">
+                  <select name="role">
+                    <option name="" value="" <%= resource.role === '' ? 'selected' : '' %>>Select Role</option>
+                    <option name="role" value="Admin" <%= resource.role === 'Admin' ? 'selected' : '' %>>Admin</option>
+                    <option name="role" value="Manager" <%= resource.role === 'Manager' ? 'selected' : '' %>>Manager</option>
+                    <option name="role" value="Resource" <%= resource.role === 'Resource' ? 'selected' : '' %>>Resource</option>
+                  </select>
+                </span>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-universal-access" aria-hidden="true"></i>
+                </span>
+              </p>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Resource Manager:</label>
+            <input class="input" type="text" placeholder="resource manager" name="resourceManager" value="<%= resource.resourceManager %>"/>
+            
+          </div>
+          <div class="field">
+            <label class="label">Capacity:</label>
+            <input class="input" type="number" placeholder="capacity" name="capacity" value="<%= resource.capacity %>"/>
+            
+          </div>
+          <div class="field">
+            <label class="label">Resource Type:</label>
+            <div class="field">
+              <p class="control has-icons-left">
+                <span class="select is-fullwidth">
+                  <select name="resourceType">
+                    <option name="" value="" <%= resource.resourceType === '' ? 'selected' : '' %>>Select Resource Type</option>
+                    <option name="resourceType" value="Contractor" <%= resource.resourceType === 'Contractor' ? 'selected' : '' %>>Contractor</option>
+                    <option name="resourceType" value="Full-Time" <%= resource.resourceType === 'Full-Time' ? 'selected' : '' %>>Full-Time</option>
+                  </select>
+                </span>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-universal-access" aria-hidden="true"></i>
+                </span>
+              </p>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Cost:</label>
+            <input class="input" type="number" placeholder="cost" name="cost" value="<%= resource.cost %>"/>
+            
+          </div>
+        <input class="button" type="submit" value="Update Admin" />
     </form>
     </div>
     </main>
