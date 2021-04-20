@@ -6,6 +6,7 @@ main {
   position: fixed;
   width: 100%;
   z-index: 1000;
+  border-bottom: 1px solid #ebeaeb;
 }
 
 .push-footer {
@@ -50,6 +51,14 @@ main {
 
 .tile.is-parent {
   padding: 1.75rem;
+}
+
+.tile {
+  transition: transform 250ms;
+}
+
+.tile:hover {
+  transform: translateY(5px);
 }
 
 #tab-content p {

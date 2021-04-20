@@ -8,6 +8,14 @@
     <main class="container">
       <!-- *********DISPLAY Images********* -->
       <div class="landing-section-2">
+        <div class="field is-grouped">
+            <div class="control">
+              <a href="/userManagement"><button class="button is-link">Back to Admins</button></a> 
+            </div>
+            <div class="control">
+              <button class="button is-link is-light">Check Resource Allocation</button>
+            </div>
+          </div>
         <span class="icon-text">
             <span class="icon is-large">
               <a href="/userManagement"><i class="fa fa-2x fa-arrow-circle-left" aria-hidden="true"></i></a>
@@ -75,7 +83,7 @@
             <input class="input" type="number" placeholder="cost" name="cost" value="<%= resource.cost %>"/>
             
           </div>
-        <input class="button" type="submit" value="Update Admin" />
+        <input class="button is-link" type="submit" value="Update Admin" />
     </form>
     </div>
     </main>

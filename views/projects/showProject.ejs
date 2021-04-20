@@ -8,11 +8,20 @@
     <main class="container">
       <!-- *********DISPLAY Images********* -->
       <div class="landing-section-2">
+        <div class="field is-grouped">
+          <div class="control">
+            <a href="/projects"><button class="button is-link">Back to Projects</button></a> 
+          </div>
+          <div class="control">
+            <button class="button is-link is-light">Check Resource Allocation</button>
+          </div>
+        </div>
+
         <span class="icon-text">
           <span class="icon is-large">
             <a href="/projects"><i class="fa fa-2x fa-arrow-circle-left" aria-hidden="true"></i></a>
           </span>
-          <span>Edit project form</span>
+          <span>Edit project</span>
         </span>
 
       <form class="form box" action="/projects/<%= project._id %>?_method=PUT" method="post">
@@ -41,7 +50,7 @@
             <input class="input" type="text" name="projectManager" value="<%= project.projectManager %>">
           </div>
           
-          <input class="button" type="submit" value="Update Project"/></a>
+          <input class="button is-link" type="submit" value="Update Project"/></a>
       </form>
       </div>
     </main>

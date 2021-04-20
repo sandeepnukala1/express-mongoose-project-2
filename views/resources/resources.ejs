@@ -8,6 +8,9 @@
     <main class="container">
       <!-- *********DISPLAY Images********* -->
       <div class="landing-section-2">
+        <div>
+          <a href="resources/new"><button class="button is-link">Create Resource</button></a>
+        </div>
         <span class="icon-text">
           <span class="icon is-large">
             <a href="/home"><i class="fa fa-2x fa-arrow-circle-left" aria-hidden="true"></i></a>
@@ -50,7 +53,7 @@
               <td><%= r.cost %></td>
               <% if(r.loggedInRole === 'Admin') { %>
               <td>
-                <a href="/resources/<%= r._id %>"><button class="button">Edit</button></a>
+                <a href="/resources/<%= r._id %>"><button class="button is-link">Edit</button></a>
                 <form style="display: contents;" action="/resources/<%= r._id %>?_method=DELETE" method="post">
                   <input style="margin: 2px;background-color: #fd7d24;" class="button" type="submit" value="Delete"/></a>
                 </form>

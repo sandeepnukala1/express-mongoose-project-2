@@ -6,17 +6,27 @@
         <!-- THE HEADER TAG PARTIAL -->
         <%- include("../partials/navbar") %>
         <main class="container">
-          <div class="section-2">
+          <div class="landing-section-2">
             <div>
-              <h1>User Login</h1>
+              <p style="text-align: center; font-size: 24px;">Sign in</p>
                 <form class="box" action="/auth/login" method="post">
                   <div class="field">
                     <label class="label">Username</label>
-                    <input class="input" type="text" placeholder="username" name="username" />
+                    <div class="control has-icons-left">
+                      <input class="input" type="text" placeholder="username" name="username" />
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                      </span>
+                    </div>
                   </div>
                   <div class="field">
                     <label class="label">Password</label>
-                    <input class="input" type="password" placeholder="password" name="password" />
+                    <div class="control has-icons-left">
+                      <input class="input" type="password" placeholder="password" name="password" />
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                      </span>
+                    </div>
                   </div>
                   <input class="button is-success" type="submit" value="Login" />
               </form>

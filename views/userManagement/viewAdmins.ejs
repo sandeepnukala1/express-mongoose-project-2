@@ -8,6 +8,9 @@
     <main class="container">
       <!-- *********DISPLAY Images********* -->
       <div class="landing-section-2">
+        <div>
+          <a href="userManagement/new"><button class="button is-link">Create Admin</button></a>
+        </div>
         <span class="icon-text">
           <span class="icon is-large">
             <a href="/home"><i class="fa fa-2x fa-arrow-circle-left" aria-hidden="true"></i></a>
@@ -15,9 +18,7 @@
           <span>Admins</span>
         </span>
 
-        <div>
-          <a href="userManagement/new"><button class="button">Create Admin</button></a>
-        </div>
+        
       <div class="tabs is-right is-boxed" id="tabs">
         <ul>
           <li class="is-active" data-tab="1">
@@ -53,7 +54,7 @@
               <td><%= r.resourceType %></td>
               <td><%= r.cost %></td>
               <td>
-                <a href="/userManagement/<%= r._id %>"><button class="button">Edit</button></a>
+                <a href="/userManagement/<%= r._id %>"><button class="button is-link">Edit</button></a>
                 <form style="display: contents;" action="/userManagement/<%= r._id %>?_method=DELETE" method="post">
                   <input style="margin: 2px;background-color: #fd7d24;" class="button" type="submit" value="Delete"/></a>
                 </form>
