@@ -110,6 +110,11 @@ Wireframe
 - Project estimation
 - Refactoring code
 
+## Key takeaways
+
+- Big fan of Bulma CSS
+- Amazed by the flexibility of writing code in express JS
+
 ## Existing Bugs
 
 - On Editing a project the start date, end date have by default 1 day added to the actual date
