@@ -25,7 +25,7 @@ planning project timelines and resource capacity.
 
 ## ERD
 
-![Alt text] (https://i.imgur.com/AMF6FxL.png)
+![Imgur](https://i.imgur.com/AMF6FxL.png)
 
 ## Models
 
