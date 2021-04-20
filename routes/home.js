@@ -4,6 +4,7 @@
 const router = require("express").Router()
 const bcrypt = require("bcrypt")
 const User = require('../models/User')
+const Project = require("../models/Projects")
 const AuthorizationCtrl = require('../controllers/authorization')
 const ProjectsRouter = require("./projects")
 const ResourceRouter = require("./resources")
@@ -79,7 +80,14 @@ router.get("/auth/logout", (req, res) => {
   })
 
 router.get("/home", AuthorizationCtrl.isAuthorized, async (req, res) => {
-    const user = await User.findOne({ username: req.user.username })
+    const loggedInUser = await User.findOne({ username: req.user.username }).lean().exec()
+    const resources = await (await User.find({}).lean().exec()).length
+    const projects = await (await Project.find({}).lean().exec()).length
+    const user = {
+      loggedInUser: loggedInUser,
+      resources: resources,
+      projects: projects
+    }
     console.log(user)
     res.render("index", { user })
 })

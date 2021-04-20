@@ -9,13 +9,12 @@
       <!-- *********DISPLAY Images********* -->
       <div class="landing-section-2">
         <span class="icon-text">
-          <span class="icon is-large">
-            <a href="/resources"><i class="fa fa-2x fa-arrow-circle-left" aria-hidden="true"></i></a>
+            <span class="icon is-large">
+              <a href="/userManagement"><i class="fa fa-2x fa-arrow-circle-left" aria-hidden="true"></i></a>
+            </span>
+            <span>Edit admin resource form</span>
           </span>
-          <span>Edit resource form</span>
-        </span>
-
-      <form class="form box" action="/resources/<%= resource._id %>?_method=PUT" method="post">
+      <form action="/userManagement/<%= resource._id %>?_method=PUT" method="post">
         <label class="label">User Name:</label>
         <input class="input" type="text" placeholder="username" name="username" value="<%= resource.username %>"/>
         <label class="label">Password:</label>

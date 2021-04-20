@@ -7,19 +7,63 @@
     <%- include("../partials/header") %>
     <main class="container">
       <!-- *********DISPLAY Images********* -->
-     
-      <% for(r of resources) { %>
-        <div>
-          <div><%= r.username %><a href="/resources/<%= r._id %>"><button class="button">Edit</button></a> 
-            <% if(r.loggedInRole === 'Admin') { %>
-              <form action="/resources/<%= r._id %>?_method=DELETE" method="post">
-                <input style="margin: 2px;background-color: #fd7d24;" class="button" type="submit" value="Delete"/></a>
-              </form>
+      <div class="landing-section-2">
+        <span class="icon-text">
+          <span class="icon is-large">
+            <a href="/home"><i class="fa fa-2x fa-arrow-circle-left" aria-hidden="true"></i></a>
+          </span>
+          <span>Resources</span>
+        </span>
+      <div class="tabs is-right is-boxed" id="tabs">
+        <ul>
+          <li class="is-active" data-tab="1">
+            <a>
+              <span class="icon is-small"><i class="fa fa-image"></i></span>
+              <span>Attributes</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="tab-content">
+        <p class="is-active" data-content="1">
+            <div class="table-container is-active" data-content="1">
+            <table class="table is-striped is-fullwidth">
+            <thead>
+            <tr>
+              <th title="Resource Name">Username</th>
+              <th title="Role">Role</th>
+              <th title="Resource Manager">Resource Manager</th>
+              <th title="Capacity">Capacity</th>
+              <th title="Resource Type">Resource Type</th>
+              <th title="Cost">Cost</th>
+              <th title="Actions">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+              <% for(r of resources) { %>
+            <tr>
+              <td><%= r.username %></td>
+              <td><%= r.role %></td>
+              <td><%= r.resourceManager %></td>
+              <td><%= r.capacity %></td>
+              <td><%= r.resourceType %></td>
+              <td><%= r.cost %></td>
+              <% if(r.loggedInRole === 'Admin') { %>
+              <td>
+                <a href="/resources/<%= r._id %>"><button class="button">Edit</button></a>
+                <form style="display: contents;" action="/resources/<%= r._id %>?_method=DELETE" method="post">
+                  <input style="margin: 2px;background-color: #fd7d24;" class="button" type="submit" value="Delete"/></a>
+                </form>
+              </td>
+              <% } %>
+            </tr>
             <% } %>
-            </div>
+            </tbody>
+          </table>
         </div>
-      <% } %>
-      
+        </p>
+      </div>
+    </div>
     </main>
     <!-- THE HEAD TAG PARTIAL -->
     <%- include("../partials/footer") %>

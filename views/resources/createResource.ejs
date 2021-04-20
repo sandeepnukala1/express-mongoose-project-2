@@ -8,14 +8,26 @@
     <main class="container">
       <!-- *********DISPLAY Images********* -->
       <div class="landing-section-2">
-      Create Resource here!
-      <form action="/resources/new" method="post">
+        <span class="icon-text">
+          <span class="icon is-large">
+            <a href="/home"><i class="fa fa-2x fa-arrow-circle-left" aria-hidden="true"></i></a>
+          </span>
+          <span>Create resource form</span>
+        </span>
+      <form class="form box" action="/resources/new" method="post">
+        <label class="label">User Name:</label>
         <input class="input" type="text" placeholder="username" name="username" />
+        <label class="label">Password:</label>
         <input class="input" type="password" placeholder="password" name="password" />
+        <label class="label">Role:</label>
         <input class="input" type="text" placeholder="role" name="role" />
+        <label class="label">Resource Manager:</label>
         <input class="input" type="text" placeholder="resource manager" name="resourceManager" />
+        <label class="label">Capacity:</label>
         <input class="input" type="number" placeholder="capacity" name="capacity" />
+        <label class="label">Resource Type:</label>
         <input class="input" type="text" placeholder="resource type" name="resourceType" />
+        <label class="label">Cost:</label>
         <input class="input" type="number" placeholder="cost" name="cost" />
         <input class="button" type="submit" value="Create Resource" />
     </form>

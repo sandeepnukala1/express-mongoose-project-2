@@ -8,13 +8,24 @@
     <main class="container">
       <!-- *********DISPLAY Images********* -->
       <div class="landing-section-2">
-      Create Project here!
-      <form action="/projects/new" method="post">
-          Project Name: <input type="text" name="projectName">
-          Start Date: <input type="date" name="startDate">
-          End Date: <input type="date" name="endDate">
-          Notes: <input type="text" name="notes">
-          Project Manager: <input type="text" name="projectManager">
+        <span class="icon-text">
+          <span class="icon is-large">
+            <a href="/home"><i class="fa fa-2x fa-arrow-circle-left" aria-hidden="true"></i></a>
+          </span>
+          <span>Create project form</span>
+        </span>
+
+      <form class="form box" action="/projects/new" method="post">
+          <label class="label">Project Name:</label>  
+          <input class="input" type="text" name="projectName">
+          <label class="label">Start Date:</label> 
+          <input class="input" type="date" name="startDate">
+          <label class="label">End Date:</label> 
+          <input class="input" type="date" name="endDate">
+          <label class="label">Notes:</label>
+          <input class="input" type="text" name="notes">
+          <label class="label">Project Manager:</label> 
+          <input class="input" type="text" name="projectManager">
           <input class="button" type="submit" value="Create Project" />
       </form>
     </div>

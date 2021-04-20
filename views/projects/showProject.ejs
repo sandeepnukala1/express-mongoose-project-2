@@ -8,12 +8,24 @@
     <main class="container">
       <!-- *********DISPLAY Images********* -->
       <div class="landing-section-2">
-      <form action="/projects/<%= project._id %>?_method=PUT" method="post">
-          Project Name: <input type="text" name="projectName" value="<%= project.projectName %>">
-          Start Date: <input type="date" name="startDate" value="<%= project.startDate %>">
-          End Date: <input type="date" name="endDate" value="<%= project.endDate %>">
-          Notes: <input type="text" name="notes" value="<%= project.notes %>">
-          Project Manager: <input type="text" name="projectManager" value="<%= project.projectManager %>">
+        <span class="icon-text">
+          <span class="icon is-large">
+            <a href="/projects"><i class="fa fa-2x fa-arrow-circle-left" aria-hidden="true"></i></a>
+          </span>
+          <span>Edit project form</span>
+        </span>
+
+      <form class="form box" action="/projects/<%= project._id %>?_method=PUT" method="post">
+          <label class="label">Project Name:</label>   
+          <input class="input" type="text" name="projectName" value="<%= project.projectName %>">
+          <label class="label">Start Date:</label>   
+          <input class="input" type="date" name="startDate" value="<%= project.startDate %>">
+          <label class="label">End Date:</label> 
+          <input class="input" type="date" name="endDate" value="<%= project.endDate %>">
+          <label class="label">Notes:</label> 
+          <input class="input" type="text" name="notes" value="<%= project.notes %>">
+          <label class="label">Project Manager:</label> 
+          <input class="input" type="text" name="projectManager" value="<%= project.projectManager %>">
           <input class="button" type="submit" value="Update Project"/></a>
       </form>
       </div>
