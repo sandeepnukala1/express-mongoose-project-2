@@ -37,6 +37,14 @@ main {
     background-size: cover;
 }
 
+.info-section {
+  padding-top: 89px;
+  padding-bottom: 20px;
+  background-image: url(https://uploads-ssl.webflow.com/5aa7d15…/5edf597…_BG%20-%20Header.svg);
+  background-position: 0 0;
+  background-size: cover;
+}
+
 .navbar-item {
   padding: 1.5rem 0.75rem;
 }
@@ -67,4 +75,9 @@ main {
 
 #tab-content p.is-active {
   display: block;
+}
+
+.hero.hero-main {
+  background-color: #E1F5C4  ;
+  color: #1b1b1b;
 }

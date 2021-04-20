@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- THE HEAD TAG PARTIAL -->
+  <%- include("../partials/head") %>
+  <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("../partials/header") %>
+    <main class="container">
+      <!-- *********DISPLAY Images********* -->
+
+      <div class="landing-section-2">
+        <form action="/resources/<%= allocationObj.resourceId %>/projectAllocations" method="POST">
+        <div class="field has-addons">
+            <div class="control is-expanded">
+              <div class="select is-fullwidth">
+                <select name="project">
+                <% for(r of allocationObj.projects) { %>
+                    <option value="<%= r._id %>"><%= r.projectName %></option>
+                <% } %>
+                </select>
+              </div>
+            </div>
+            <div class="control">
+              <button type="submit" class="button is-primary">Choose</button>
+            </div>
+          </div>
+        </form>
+        <span class="icon-text">
+          <span class="icon is-large">
+            <a href="/resources/<%= allocationObj.resourceId %>"><i class="fa fa-2x fa-arrow-circle-left" aria-hidden="true"></i></a>
+          </span>
+          <span>Project Allocations</span>
+        </span>
+      <div class="tabs is-right is-boxed" id="tabs">
+        <ul>
+          <li class="is-active" data-tab="1">
+            <a>
+              <span class="icon is-small"><i class="fa fa-user-circle-o"></i></span>
+              <span>Resources</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="tab-content">
+        <p class="is-active" data-content="1">
+            <div class="table-container is-active" data-content="1">
+                <table class="table is-striped is-fullwidth">
+                    <thead>
+                    <tr>
+                      <th title="Project Name">Project Name</th>
+                      <th title="Start Date">Start Date</th>
+                      <th title="End Date">End Date</th>
+                      <th title="Project Notes">Project Notes</th>
+                      <th title="Project Manager">Project Manager</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <% for(r of allocationObj.assignedProjects) { %>
+                    <tr>
+                      <td><%= r.projectName %></td>
+                      <td><%= r.startDate %></td>
+                      <td><%= r.endDate %></td>
+                      <td><%= r.notes %></td>
+                      <td><%= r.projectManager %></td>
+                    </tr>
+                    <% } %>
+                    </tbody>
+                  </table>
+            </div>
+        </p>
+       
+      </div>
+    </div>
+    </main>
+    <!-- THE HEAD TAG PARTIAL -->
+    <%- include("../partials/footer") %>
+  </body>
+</html>

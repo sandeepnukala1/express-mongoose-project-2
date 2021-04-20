@@ -11,19 +11,19 @@
       <div class="landing-section-2">
       <div style="margin-top: 0.75rem;" class="tile is-ancestor">
         <div class="tile is-parent">
-          <article class="tile is-child box">
+          <article class="tile is-child box notification is-primary">
             <p class="title"><a href="/projects">Projects</a></p>
             <p class="subtitle">Total Projects: <%= user.projects %></p>
           </article>
         </div>
         <div class="tile is-parent">
-          <article class="tile is-child box">
+          <article class="tile is-child box notification is-info">
             <p class="title"><a href="/resources">Resources</a></p>
             <p class="subtitle">Total Resources: <%= user.resources %></p>
           </article>
         </div>
         <div class="tile is-parent">
-          <article class="tile is-child box">
+          <article class="tile is-child box notification is-warning">
             <p class="title"><a href="/projects/new">Create Project</a></p>
             <div class="content">
               <p>Create project for the logged in user. Admin users can view all projects.</p>
@@ -34,7 +34,7 @@
       
       <div class="tile is-ancestor">
         <div class="tile is-parent">
-          <article class="tile is-child box">
+          <article class="tile is-child box notification is-danger">
             <p class="title"><a href="/resources/new">Create Resource</a></p>
             <div class="content">
               <p>Create Resources for all users. Only admins can delete or update a resource!</p>
@@ -43,7 +43,7 @@
         </div>
         <% if(user.loggedInUser.role === 'Admin') { %>
           <div class="tile is-parent is-8">
-            <article class="tile is-child box">
+            <article class="tile is-child box notification is-success">
               <p class="title"><a href="/userManagement">User Management</a></p>
               <p class="subtitle">Admin users management</p>
               <div class="content">
